@@ -1,0 +1,224 @@
+/* Сброс стилей и основные настройки */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at center, #1b0c33 0%, #080a1a 60%, #000000 100%);
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  position: relative;
+  padding: 20px;
+}
+
+/* Анимированный фоновый декор */
+.bg-particle {
+  position: absolute;
+  bottom: -50px;
+  font-size: 24px;
+  user-select: none;
+  pointer-events: none;
+  animation: floatUp 8s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  20% { opacity: 0.7; }
+  80% { opacity: 0.7; }
+  100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+
+/* Карточка контейнера */
+.glass-card {
+  background: rgba(20, 15, 38, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 28px;
+  padding: 35px 25px;
+  max-width: 550px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 
+              0 0 25px rgba(168, 85, 247, 0.2);
+  z-index: 10;
+  transition: all 0.4s ease;
+}
+
+h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #a855f7, #3b82f6, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+}
+
+p {
+  color: #d1d5db;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* Блок со стихотворением */
+.poem-container {
+  background: rgba(168, 85, 247, 0.1);
+  border-left: 4px solid #a855f7;
+  padding: 20px;
+  border-radius: 0 15px 15px 0;
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+.poem-text {
+  font-style: italic;
+  color: #e9d5ff;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.poem-author {
+  text-align: right;
+  color: #f472b6;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(168, 85, 247, 0.2);
+  border: 1px solid #a855f7;
+  color: #e9d5ff;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+/* Кнопки */
+.btn {
+  background: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.6);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* Викторина */
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.option-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f3f4f6;
+  padding: 14px;
+  border-radius: 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.option-btn:hover {
+  background: rgba(168, 85, 247, 0.2);
+  border-color: #a855f7;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #a855f7);
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+/* Экраны подарков */
+.gift-image {
+  width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(168, 85, 247, 0.5);
+  background: #fff;
+  padding: 10px;
+}
+
+.gift-box {
+  background: rgba(124, 58, 237, 0.15);
+  border: 2px dashed #a855f7;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.gift-title {
+  color: #f472b6;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* Финальная цитата */
+.final-quote {
+  text-align: right;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #f472b6;
+  margin: 25px 0;
+  padding: 15px;
+  border-top: 1px solid rgba(168, 85, 247, 0.3);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.3);
+  line-height: 1.5;
+}
+
+.final-quote span {
+  display: block;
+  font-size: 0.95rem;
+  color: #d1d5db;
+  font-style: normal;
+  margin-top: 8px;
+}
+
+.hidden {
+  display: none;
+}
